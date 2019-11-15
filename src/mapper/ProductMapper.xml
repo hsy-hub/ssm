@@ -1,0 +1,50 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.ProductMapper">
+
+    <sql id="sql">
+           SELECT p.id,p.productName ,p.productUnit,p.proId,p.payed,u.name
+        FROM product_table AS p LEFT JOIN borrow_table AS b ON b.productid=p.id
+        LEFT JOIN user1 AS  u ON b.userid = u.id
+    </sql>
+
+    <insert id="RegisterProduct" parameterType="product">
+        insert into product_table(id,productName,productUnit,productCount,billMoney,proId,payed) values(#{id},#{productName},#{productUnit},#{productCount},#{billMoney},#{proId},#{payed})
+    </insert>
+
+    <update id="updateProduct" parameterType="product">
+        update product_table set productName=#{productName},productUnit=#{productUnit},productCount=#{productCount},billMoney=#{billMoney},proId=#{proId},payed=#{payed} where id=#{id}
+    </update>
+
+    <delete id="deleteProductByid" parameterType="java.lang.Integer">
+        delete from product_table where id=#{id}
+    </delete>
+
+    <select id="getProductByid" parameterType="java.lang.Integer" resultType="pojo.Product">
+        select * from product_table where id=#{id}
+    </select>
+
+    <select id="getProductList" parameterType="product" resultType="Product">
+        <include refid="sql"/>
+        <where>
+            <if test="productName!=null and productName!=''" >
+                and p.productName like '%${productName}%'
+            </if>
+            <if test="productUnit!=null and productUnit!=''" >
+                and p.productUnit like '%${productUnit}%'
+            </if>
+            <if test="payed!=null and payed!=''" >
+                and p.payed=#{payed}
+            </if>
+        </where>
+    </select>
+
+    <insert id="borrow" parameterType="product">
+        insert into borrow_table(id,productid,userid) values(#{id},#{productid},#{userid})
+    </insert>
+
+    <update id="borrowUpdate" parameterType="product">
+    update product  set payed="1" where id=#{id}
+</update>
+</mapper>

@@ -1,0 +1,55 @@
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mapper.UserMapper">
+    <sql id="sql">
+        select * from user1
+    </sql>
+
+    <!--<resultMap id="UserMap" type="user">&lt;!&ndash;type里的user不分大小写&ndash;&gt;-->
+    <!--<id column="id" property="id"></id>-->
+    <!--<result column="name" property="name"></result>-->
+    <!--<result column="loginName" property="loginName"></result>-->
+    <!--<result column="password" property="password"></result>-->
+    <!--<result column="gender" property="gender"></result>-->
+    <!--<result column="birthDate" property="birthDate"></result>-->
+    <!--</resultMap>-->
+
+    <select id="login" parameterType="user" resultType="User">
+      <include refid="sql"/> where name=#{loginName} and password=#{password}
+    </select>
+
+    <insert id="RegisterUser" parameterType="user">
+        insert into user1(id,name,loginName,password,gender,birthDate,phone,address,userType) values (#{id},#{name},#{loginName},#{password},#{gender},#{birthDate},#{phone},#{address},#{userType})
+    </insert>
+
+    <select id="getUserList" parameterType="user" resultType="User">
+        <include refid="sql"/>
+        <where>
+        <if test="name != null and name != ''">
+            and name like '%${name}%'
+        </if>
+        </where>
+    </select>
+
+    <update id="updateUser" parameterType="user">
+        update user1 set name=#{name},loginName=#{loginName},gender=#{gender},birthDate=#{birthDate},phone=#{phone},address=#{address},userType=#{userType},headpath=#{headpath} where id=#{id}
+    </update>
+
+    <delete id="deleteUserByid" parameterType="java.lang.Integer">
+        delete from user1 where id=#{id}
+    </delete>
+
+    <select id="getUserByid" parameterType="java.lang.Integer" resultType="pojo.User">
+        <include refid="sql"/> where id=#{id}
+    </select>
+
+
+    <select id="checkPassword" parameterType="user" resultType="User">
+        <include refid="sql"/> where id=#{id} and password=#{password}
+    </select>
+
+    <update id="modifyPs" parameterType="user">
+        update user1 set password=#{password} where id=#{id}
+    </update>
+</mapper>
