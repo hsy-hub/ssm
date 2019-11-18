@@ -33,7 +33,7 @@
 			<div class="title">借阅管理&gt;&gt;</div>
 		</div>
 		<div class="content">
-			<table class="list">
+			<table class="list" id="table">
 				<thead>
 				<tr>
 					<td width="70" height="29"><div class="STYLE1" align="center">图书编号</div>
@@ -45,6 +45,8 @@
 					<td width="100"><div class="STYLE1" align="center">出版社</div>
 					</td>
 					<td width="100"><div class="STYLE1" align="center">是否借出</div>
+					</td>
+					<td width="100"><div class="STYLE1" align="center">图书管理</div>
 					</td>
 					<td width="100"><div class="STYLE1" align="center">图书管理</div>
 					</td>
@@ -67,10 +69,17 @@
 						</td>
 						<%--<td><c:out value="${product.payed}"></c:out></td>--%>
 						<div name="div1">
-						<td><a href="<%=request.getContextPath()%>/borrow.action?productid=${product.id}">
+						<td><a href="<%=request.getContextPath()%>/borrow.action?id=${product.id}">
 							<c:if test="${product.payed=='0'}"><input value="借阅" class="input-button" onclick="" type="button"></c:if>
 							<c:if test="${product.payed=='1'}"><input value="借阅" class="input-button-disabled" type="button" disabled></c:if>
 						</a></td>
+						</div>
+
+						<div name="div2">
+							<td><a href="<%=request.getContextPath()%>/repay.action?id=${product.id}">
+								<c:if test="${product.payed=='0'}"><input value="还书" class="input-button-disabled" type="button" disabled></c:if>
+								<c:if test="${product.payed=='1'}"><input value="还书" class="input-button" type="button" onclick=""></c:if>
+							</a></td>
 						</div>
 					</tr>
 				</c:forEach>

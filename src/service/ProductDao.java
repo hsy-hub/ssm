@@ -8,13 +8,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 public interface ProductDao {
-    public Boolean RegisterProduct(Product product) throws SQLException;
-    public List<Product> getProductList(Product product) throws SQLException;
-    public boolean updateProduct(Product product) throws SQLException;
-    public boolean deleteProductByid(Integer id) throws SQLException;
-    public Product getProductByid(Integer id) throws SQLException;
-    public boolean borrow(Borrow borrow)throws Exception;
-    public boolean borrowUpdate(Product product)throws Exception;
-    public boolean repay(Borrow borrow);
-    public boolean repayUpdate(Product product)throws Exception;
+    Boolean RegisterProduct(Product product) throws SQLException;
+    List<Product> getProductList(Product product) throws SQLException;
+    boolean updateProduct(Product product) throws SQLException;
+    boolean deleteProductByid(Integer id) throws SQLException;
+    Product getProductByid(Integer id) throws SQLException;
+    boolean borrow(Borrow borrow)throws Exception;
+    boolean borrowUpdate(Product product)throws Exception;
+    boolean repay(Borrow borrow);
+    boolean repayUpdate(Product product)throws Exception;
 }

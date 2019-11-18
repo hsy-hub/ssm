@@ -45,17 +45,17 @@
     </select>
 
 
-    <select id="checkPassword" parameterType="user" resultType="User">
-        <include refid="sql"/> where id=#{id} and password=#{password}
-    </select>
-
-    <update id="modifyPs" parameterType="user">
-        update user1 set password=#{password} where id=#{id}
-    </update>
+    <!--<select id="checkPassword" parameterType="user" resultType="User">-->
+        <!--<include refid="sql"/> where id=#{id} and password=#{password}-->
+    <!--</select>-->
 
     <select id="checkUserName" parameterType="String" resultType="integer">
         select count(*) from user1 where name=#{name}
     </select>
+
+    <update id="modifyPs" parameterType="user">
+        update user1 set password=#{password} where id =#{id}
+    </update>
 
 
     <select id="search" parameterType="user" resultType="User">

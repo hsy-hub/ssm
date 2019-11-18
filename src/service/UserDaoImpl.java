@@ -46,10 +46,10 @@ public class UserDaoImpl implements UserDao {
     }
 
 
-    @Override
-    public boolean checkPassword(User user) {
-        return userMapper.checkPassword(user);
-    }
+//    @Override
+//    public boolean checkPassword(User user) {
+//        return userMapper.checkPassword(user);
+//    }
 
     @Override
     public boolean modifyPs(User user) {

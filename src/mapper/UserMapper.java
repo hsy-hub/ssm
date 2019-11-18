@@ -6,14 +6,14 @@ import pojo.User;
 import java.util.List;
 
 public interface UserMapper {
-    public User login(User user);
-    public Boolean RegisterUser(User user);
-    public List<User> getUserList(User user);
-    public boolean updateUser(User user);
-    public boolean deleteUserByid(Integer id);
-    public User getUserByid(Integer id);
-    public boolean checkPassword(User user);
-    public boolean modifyPs(User user);
-    public Integer checkUserName(String name);
-    public List<User> search(User user);
+    User login(User user);
+    Boolean RegisterUser(User user);
+    List<User> getUserList(User user);
+    boolean updateUser(User user);
+    boolean deleteUserByid(Integer id);
+    User getUserByid(Integer id);
+    //boolean checkPassword(User user);
+    boolean modifyPs(User user);
+    Integer checkUserName(String name);
+    List<User> search(User user);
 }

@@ -81,17 +81,22 @@ public class UserController {
 
         //确认“修改”后
         @RequestMapping("/userUpdatePs.action")
-        public ModelAndView userUpdatePs(User user){
-            ModelAndView mad = new ModelAndView();
-            boolean b = userDao.checkPassword(user);
-            if (b==false){
-                User reuser = new User();
-                boolean modifyPs = userDao.modifyPs(reuser);
-                mad.setViewName("userList");
-            }else{
-                mad.setViewName("updatePwd");
-            }
-            return mad;
+        public String userUpdatePs(User user){
+//            ModelAndView mad = new ModelAndView();
+//            boolean b = userDao.checkPassword(user);
+//            if (b==false){
+//                User reuser = new User();
+//                boolean modifyPs = userDao.modifyPs(reuser);
+//                mad.setViewName("userList");
+//            }else{
+//                mad.setViewName("updatePwd");
+//            }
+//            return mad;
+
+            Integer id = (Integer) request.getSession().getAttribute("id");
+            user.setId(id);
+            userDao.modifyPs(user);
+            return "redirect:userList.action";
         }
 
         //点击“用户管理”or"查询"后

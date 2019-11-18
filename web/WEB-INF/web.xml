@@ -34,6 +34,7 @@
         <session-timeout>10</session-timeout>
     </session-config>
 
+    <!--解决post乱码的问题-->
     <filter>
         <filter-name>encoding</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

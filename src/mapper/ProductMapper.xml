@@ -45,6 +45,14 @@
     </insert>
 
     <update id="borrowUpdate" parameterType="product">
-    update product  set payed="1" where id=#{id}
-</update>
+    update product_table  set payed="1" where id=#{id}
+    </update>
+
+    <delete id="repay" parameterType="product">
+        delete from  borrow_table where id=#{id}
+    </delete>
+
+    <update id="repayUpdate" parameterType="product">
+    update product_table  set payed="0" where id=#{id}
+    </update>
 </mapper>
