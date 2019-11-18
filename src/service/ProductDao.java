@@ -1,6 +1,7 @@
 package service;
 
 
+import pojo.Borrow;
 import pojo.Product;
 
 import java.sql.SQLException;
@@ -12,6 +13,6 @@ public interface ProductDao {
     public boolean updateProduct(Product product) throws SQLException;
     public boolean deleteProductByid(Integer id) throws SQLException;
     public Product getProductByid(Integer id) throws SQLException;
-    public boolean borrow(Product product)throws Exception;
+    public boolean borrow(Borrow borrow)throws Exception;
     public boolean borrowUpdate(Integer id)throws Exception;
 }

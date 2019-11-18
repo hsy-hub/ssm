@@ -36,16 +36,20 @@ public class UserController {
 
         //点击"登录"后
         @RequestMapping("/login.action")
-        public String Login(User user, Model model) throws ParamErrorException {
+        public String Login(User user) throws ParamErrorException {
             String password = user.getPassword();
             if (password.length()<3){
                 throw new ParamErrorException();
             }
             HttpSession session = request.getSession();
             User loginUser = userDao.Login(user);
+            session.setAttribute("user",loginUser);
+            Integer id = loginUser.getId();
+            session.setAttribute("id", id);
+            String userType = loginUser.getUserType();
+            session.setAttribute("userType", userType);
             if (loginUser != null){
                 //重定向
-                session.setAttribute("user",loginUser);
                 return "redirect:frame.action";//内部转发不用redirect（直接写frame）
             }else{
                 // model.addAttribute("msg","用户名或密码错误！");

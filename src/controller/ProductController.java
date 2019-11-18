@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import pojo.Borrow;
 import pojo.Product;
 import service.ProductDao;
 
@@ -111,11 +112,14 @@ public class ProductController {
         return mad;
     }
 
+    //点击“借阅”后
     @RequestMapping("/borrow.action")
-    public String borrow(Product product) throws Exception {
-        productDao.borrow(product);
-        //productDao.borrowUpdate();
-        return "redirect:/bill2.action";
+    public String borrow(Borrow borrow) throws Exception {
+        Integer userid = (Integer) request.getSession().getAttribute("id");
+        borrow.setUserid(userid);
+        productDao.borrow(borrow);
+        productDao.borrowUpdate(borrow.getProductid());
+        return "redirect:bill2.action";
     }
 
 }

@@ -3,6 +3,7 @@ package service;
 import mapper.ProductMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pojo.Borrow;
 import pojo.Product;
 import java.sql.SQLException;
 import java.util.List;
@@ -38,12 +39,11 @@ public class ProductDaoImpl implements ProductDao {
         return productMapper.getProductByid(id);
     }
 
-
-
     @Override
-    public boolean borrow(Product product) throws Exception {
-        return productMapper.borrow(product);
+    public boolean borrow(Borrow borrow) throws Exception {
+        return productMapper.borrow(borrow);
     }
+
 
     @Override
     public boolean borrowUpdate(Integer id) throws Exception {

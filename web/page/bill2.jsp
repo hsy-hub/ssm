@@ -67,7 +67,7 @@
 						</td>
 						<%--<td><c:out value="${product.payed}"></c:out></td>--%>
 						<div name="div1">
-						<td><a href="<%=request.getContextPath()%>/borrow.action?id=${product.id}">
+						<td><a href="<%=request.getContextPath()%>/borrow.action?productid=${product.id}">
 							<c:if test="${product.payed=='0'}"><input value="借阅" class="input-button" onclick="" type="button"></c:if>
 							<c:if test="${product.payed=='1'}"><input value="借阅" class="input-button-disabled" type="button" disabled></c:if>
 						</a></td>
