@@ -14,4 +14,6 @@ public interface UserMapper {
     public User getUserByid(Integer id);
     public boolean checkPassword(User user);
     public boolean modifyPs(User user);
+    public Integer checkUserName(String name);
+    public List<User> search(User user);
 }

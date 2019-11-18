@@ -95,12 +95,13 @@
 		</div>
 	</div>
 <script>
-	$(function () {
-		$("input[name=search]").on("click", function () {
-			var name = $("input[name=name]").val();
-			location.href = "<%=request.getContextPath()%>/userList.action?name=" + name;
-		})
-	})
+
+    $(function () {
+        $("input[name=search]").on("click", function () {
+            var name = $("input[name=name]").val();
+            location.href = "<%=request.getContextPath()%>/userList.action?name=" + name;
+        })
+    })
 </script>
 
 <%--<script type="text/javascript">--%>

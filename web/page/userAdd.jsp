@@ -17,7 +17,7 @@
 			<table class="box">
 			   <tbody><tr>
 					<td class="field">用户名：</td>
-					<td><input type="text" name="name" class="text" id="name" value=""> <font color="red">*</font><font color="red" id="name_span"></font></td>
+					<td><input type="text" name="name" class="text" id="name" value=""> <font color="red">*</font><font color="red" id="name_span"></font><span></span></td>
 				</tr>
 				 <tr>
 					<td class="field">用户账号：</td>
@@ -69,7 +69,21 @@
 	</form>
 </div>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/user/add.js"></script>
-
+<script>
+ 	$(function () {
+		var name = $("input[name=name]");
+		name.on("blur",function () {
+			$.ajax({
+				url:"<%=request.getContextPath()%>/checkUserName.action",
+				data:"name" + name.val(),
+				type:"get",
+				success:function (d) {
+					$("span").html(d);
+                }
+			})
+        })
+    })
+</script>
 
 </body>
 </html>

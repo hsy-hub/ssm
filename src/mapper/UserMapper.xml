@@ -52,4 +52,18 @@
     <update id="modifyPs" parameterType="user">
         update user1 set password=#{password} where id=#{id}
     </update>
+
+    <select id="checkUserName" parameterType="String" resultType="integer">
+        select count(*) from user1 where name=#{name}
+    </select>
+
+
+    <select id="search" parameterType="user" resultType="User">
+        <include refid="sql"/>
+        <where>
+            <if test="name != null and name != ''">
+                and name like '%${name}%'
+            </if>
+        </where>
+    </select>
 </mapper>

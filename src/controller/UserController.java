@@ -7,8 +7,10 @@ import org.apache.commons.io.FilenameUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import pojo.User;
@@ -179,6 +181,19 @@ public class UserController {
 
 
 
+    @RequestMapping("/checkUserName.action")
+    @ResponseBody
+    public String checkUserName(String name){
+            int i = userDao.checkUserName(name);
+          return (i > 0) ? "用户名被占用" : "用户名可用";
+    }
 
+
+    @RequestMapping("/search.action")
+    @ResponseBody
+    public List<User> search(@RequestBody User user){
+            List<User> userList = userDao.search(user);
+            return userList;
+    }
 }
 

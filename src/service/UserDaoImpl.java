@@ -55,4 +55,16 @@ public class UserDaoImpl implements UserDao {
     public boolean modifyPs(User user) {
         return userMapper.modifyPs(user);
     }
+
+    @Override
+    public Integer checkUserName(String name) {
+        return userMapper.checkUserName(name);
+    }
+
+    @Override
+    public List<User> search(User user) {
+        return userMapper.search(user);
+    }
+
+
 }
