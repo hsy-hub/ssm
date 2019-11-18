@@ -14,5 +14,7 @@ public interface ProductDao {
     public boolean deleteProductByid(Integer id) throws SQLException;
     public Product getProductByid(Integer id) throws SQLException;
     public boolean borrow(Borrow borrow)throws Exception;
-    public boolean borrowUpdate(Integer id)throws Exception;
+    public boolean borrowUpdate(Product product)throws Exception;
+    public boolean repay(Borrow borrow);
+    public boolean repayUpdate(Product product)throws Exception;
 }
