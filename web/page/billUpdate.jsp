@@ -56,8 +56,10 @@
 				 <tr>
 					<td class="field">是否借出：</td>
 					<td>
-						<input type="radio" name="payed" value="1" <c:if  test="${product.payed=='1'}">checked</c:if>>是
-						<input type="radio" name="payed" value="0" <c:if  test="${product.payed=='0'}">checked</c:if>>否
+						<input type="radio" name="payed" value="是">是
+						<input type="radio" name="payed" value="否">否
+						<%--<input type="radio" name="payed" value="1" <c:if  test="${product.payed=='1'}">checked</c:if>>是--%>
+						<%--<input type="radio" name="payed" value="0" <c:if  test="${product.payed=='0'}">checked</c:if>>否--%>
 					</td>
 				</tr>
 			</tbody></table>

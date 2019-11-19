@@ -8,6 +8,15 @@ public class Product {
     String billMoney;
     String proId;
     String payed;
+    Integer productid;
+
+    public Integer getProductid() {
+        return productid;
+    }
+
+    public void setProductid(Integer productid) {
+        this.productid = productid;
+    }
 
     public Integer getId() {
         return id;

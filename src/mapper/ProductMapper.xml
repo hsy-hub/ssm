@@ -4,7 +4,7 @@
 <mapper namespace="mapper.ProductMapper">
 
     <sql id="sql">
-           SELECT p.id,p.productName ,p.productUnit,p.proId,p.payed,u.name
+           SELECT p.id,p.productName ,p.productUnit,p.proId,p.payed,u.name,b.productid
         FROM product_table AS p LEFT JOIN borrow_table AS b ON b.productid=p.id
         LEFT JOIN user1 AS  u ON b.userid = u.id
     </sql>
@@ -41,11 +41,11 @@
     </select>
 
     <insert id="borrow" parameterType="product">
-        insert into borrow_table(id,productid,userid) values(#{id},#{productid},#{userid})
+        insert into borrow_table values(null,#{productid},#{userid})
     </insert>
 
     <update id="borrowUpdate" parameterType="product">
-    update product_table  set payed="1" where id=#{id}
+    update product_table  set payed="是" where id=#{id}
     </update>
 
     <delete id="repay" parameterType="product">
@@ -53,6 +53,6 @@
     </delete>
 
     <update id="repayUpdate" parameterType="product">
-    update product_table  set payed="0" where id=#{id}
+    update product_table  set payed="否" where id=#{id}
     </update>
 </mapper>

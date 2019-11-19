@@ -64,8 +64,10 @@
 						<c:if test="${product.proId=='2'}">成光出版社</c:if></td>
 					<%--<td><c:out value="${product.proId}"></c:out></td>--%>
 						<td>
-							<c:if test="${product.payed=='1'}">是</c:if>
-							<c:if test="${product.payed=='0'}">否</c:if>
+							<c:if test="${product.productid==null}">否</c:if>
+							<c:if test="${product.productid!=null}">是</c:if>
+							<%--<c:if test="${product.payed=='1'}">是</c:if>--%>
+							<%--<c:if test="${product.payed=='0'}">否</c:if>--%>
 							<%--${product.payed}--%>
 						</td>
 						<%--<td><c:out value="${product.payed}"></c:out></td>--%>

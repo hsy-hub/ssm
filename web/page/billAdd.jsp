@@ -47,7 +47,7 @@
 				</tr>
 				 <tr>
 					<td class="field">是否借出：</td>
-					<td><input type="radio" name="payed" value="1">是<input type="radio" name="payed" checked="" value="0">否</td>
+					<td><input type="radio" name="payed" value="是">是<input type="radio" name="payed" checked="" value="否">否</td>
 				</tr>
 			</tbody></table>
 		</div>

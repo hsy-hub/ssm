@@ -121,7 +121,7 @@ public class ProductController {
         borrow.setProductid(pr.getId());
         productDao.borrow(borrow);
         productDao.borrowUpdate(pr);
-        return "forward:/bill2.action";
+        return "redirect:/bill2.action";
     }
 
 

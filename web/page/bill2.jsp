@@ -63,22 +63,24 @@
 							<c:if test="${product.proId=='2'}">成光出版社</c:if></td>
 						<%--<td><c:out value="${product.proId}"></c:out></td>--%>
 						<td>
-							<c:if test="${product.payed=='1'}">是</c:if>
-							<c:if test="${product.payed=='0'}">否</c:if>
+							<c:if test="${product.productid==null}">否</c:if>
+							<c:if test="${product.productid!=null}">是</c:if>
+							<%--<c:if test="${product.payed=='1'}">是</c:if>--%>
+							<%--<c:if test="${product.payed=='0'}">否</c:if>--%>
 							<%--${product.payed}--%>
 						</td>
 						<%--<td><c:out value="${product.payed}"></c:out></td>--%>
 						<div name="div1">
 						<td><a href="<%=request.getContextPath()%>/borrow.action?id=${product.id}">
-							<c:if test="${product.payed=='0'}"><input value="借阅" class="input-button" onclick="" type="button"></c:if>
-							<c:if test="${product.payed=='1'}"><input value="借阅" class="input-button-disabled" type="button" disabled></c:if>
+							<c:if test="${product.productid==null}"><input value="借阅" class="input-button" onclick="" type="button"></c:if>
+							<c:if test="${product.productid!=null}"><input value="借阅" class="input-button-disabled" type="button" disabled></c:if>
 						</a></td>
 						</div>
 
 						<div name="div2">
 							<td><a href="<%=request.getContextPath()%>/repay.action?id=${product.id}">
-								<c:if test="${product.payed=='0'}"><input value="还书" class="input-button-disabled" type="button" disabled></c:if>
-								<c:if test="${product.payed=='1'}"><input value="还书" class="input-button" type="button" onclick=""></c:if>
+								<c:if test="${product.productid==null}"><input value="还书" class="input-button-disabled" type="button" disabled></c:if>
+								<c:if test="${product.productid!=null}"><input value="还书" class="input-button" type="button" onclick=""></c:if>
 							</a></td>
 						</div>
 					</tr>
