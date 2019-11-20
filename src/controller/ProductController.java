@@ -134,7 +134,7 @@ public class ProductController {
         borrow.setProductid(pr.getId());
         productDao.repay(borrow);
         productDao.repayUpdate(pr);
-        return "forward:/bill2.action";
+        return "redirect:/bill2.action";
     }
 
 }
