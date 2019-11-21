@@ -69,14 +69,13 @@ public class UserController {
 
         //点击"修改密码"后
         @RequestMapping("/updatePwd.action")
-        public ModelAndView updatePwd(){
+        public String updatePwd(Model model){
             // HttpSession session = request.getSession();
             // session.setAttribute("list",userList);
-            ModelAndView mad = new ModelAndView();
             List<User> userList = userDao.getUserList(null);//调用getUserList方法
-            mad.addObject("list",userList);
-            mad.setViewName("updatePwd");//此时不能用redirect
-            return mad;
+            model.addAttribute("list",userList);
+            return"updatePwd";//此时不能用redirect
+
         }
 
         //确认“修改”后
