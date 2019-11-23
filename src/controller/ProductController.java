@@ -25,19 +25,15 @@ public class ProductController {
 
     //点击“图书管理”or"查询"后
     @RequestMapping("/billList.action")
-    public ModelAndView productList(Product product, @RequestParam(required = false, defaultValue = "1", value = "page") int page) throws SQLException {
-        ModelAndView mad = new ModelAndView();
+    public String productList(Product product, @RequestParam(required = false, defaultValue = "1", value = "page") int page,Model model) throws SQLException {
         //首先是设置第几页，第二个参数是每页的记录数
         PageHelper.startPage(page, 5);
         List<Product> productList = productDao.getProductList(product);
         PageInfo pageinfo = new PageInfo(productList);
-        mad.addObject("productName", product.getProductName());
-        mad.addObject("productUnit", product.getProductUnit());
-        //mad.addObject("payed",product.getPayed());
-        //mad.addObject("list",productList);
-        mad.addObject("pageinfo", pageinfo);
-        mad.setViewName("billList");
-        return mad;
+        model.addAttribute("productName", product.getProductName());
+        model.addAttribute("productUnit", product.getProductUnit());
+        model.addAttribute("pageinfo", pageinfo);
+        return "billList";
     }
 
     //添加图书 点击"保存"后

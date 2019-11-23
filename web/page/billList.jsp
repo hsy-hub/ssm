@@ -47,7 +47,7 @@
 					<td width="100"><div class="STYLE1" align="center">出版社</div>
 					<%--</td>--%>
 					<%--<td width="100"><div class="STYLE1" align="center">是否借出</div>--%>
-					<%--</td>--%>
+					</td>
 					<td width="100"><div class="STYLE1" align="center">图书管理</div>
 					</td>
 				</tr>
@@ -61,7 +61,8 @@
 						<td><c:out value="${product.productUnit}"></c:out></td>
 					<td><c:if test="${product.proId=='0'}">中华出版社</c:if>
 						<c:if test="${product.proId=='1'}">清华出版社</c:if>
-						<c:if test="${product.proId=='2'}">成光出版社</c:if></td>
+						<c:if test="${product.proId=='2'}">成光出版社</c:if>
+                    </td>
 					<%--<td><c:out value="${product.proId}"></c:out></td>--%>
 						<%--<td>--%>
 							<%--<c:if test="${product.productid==null}">否</c:if>--%>

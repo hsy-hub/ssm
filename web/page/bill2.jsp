@@ -45,7 +45,7 @@
 					<td width="100"><div class="STYLE1" align="center">出版社</div>
 					<%--</td>--%>
 					<%--<td width="100"><div class="STYLE1" align="center">是否借出</div>--%>
-					<%--</td>--%>
+					</td>
 					<td width="100"><div class="STYLE1" align="center">图书管理</div>
 					</td>
 					<td width="100"><div class="STYLE1" align="center">图书管理</div>
