@@ -70,9 +70,9 @@ public class UserController {
         //点击"修改密码"后
         @RequestMapping("/updatePwd.action")
         public String updatePwd(Model model){
-            // HttpSession session = request.getSession();
-            // session.setAttribute("list",userList);
+             HttpSession session = request.getSession();
             List<User> userList = userDao.getUserList(null);//调用getUserList方法
+             session.setAttribute("list",userList);
             model.addAttribute("list",userList);
             return"updatePwd";//此时不能用redirect
 
@@ -81,21 +81,16 @@ public class UserController {
         //确认“修改”后
         @RequestMapping("/userUpdatePs.action")
         public String userUpdatePs(User user){
-//            ModelAndView mad = new ModelAndView();
-//            boolean b = userDao.checkPassword(user);
-//            if (b==false){
-//                User reuser = new User();
-//                boolean modifyPs = userDao.modifyPs(reuser);
-//                mad.setViewName("userList");
-//            }else{
-//                mad.setViewName("updatePwd");
-//            }
-//            return mad;
-
             Integer id = (Integer) request.getSession().getAttribute("id");
+            HttpSession session = request.getSession();
+            int modifyPs = userDao.modifyPs(user);
             user.setId(id);
-            userDao.modifyPs(user);
-            return "redirect:userList.action";
+            if (modifyPs>0){
+                    session.invalidate();
+                return "login";
+            }else{
+                return "updatePwd";
+            }
         }
 
         //点击“用户管理”or"查询"后

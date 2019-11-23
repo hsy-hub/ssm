@@ -21,7 +21,7 @@
 				</tr>
 				 <tr>
 					<td class="field">新密码：</td>
-					<td><input type="password" name="newPassword" class="text" id="newPassword"/> <font color="red">*</font></td>
+					<td><input type="password" name="password" class="text" id="newPassword"/> <font color="red">*</font></td>
 				</tr>
 				</table>
 			</div>

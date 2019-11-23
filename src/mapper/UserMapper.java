@@ -12,8 +12,8 @@ public interface UserMapper {
     boolean updateUser(User user);
     boolean deleteUserByid(Integer id);
     User getUserByid(Integer id);
-    //boolean checkPassword(User user);
-    boolean modifyPs(User user);
+//    int checkPassword(User user);
+    int modifyPs(User user);
     Integer checkUserName(String name);
     List<User> search(User user);
 }

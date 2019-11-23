@@ -45,7 +45,7 @@
     </select>
 
 
-    <!--<select id="checkPassword" parameterType="user" resultType="User">-->
+    <!--<select id="checkPassword" parameterType="user" resultType="integer">-->
         <!--<include refid="sql"/> where id=#{id} and password=#{password}-->
     <!--</select>-->
 
