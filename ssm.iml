@@ -22,7 +22,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
+    <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
           <root url="jar://E:/servlet-jar/pageInfo/pagehelper-5.1.2.jar!/" />
@@ -368,7 +368,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/servlet-jar/json.jar/jackson-annotations-2.4.0.jar!/" />
+          <root url="jar://E:/servlet-jar/jackson.jar/jackson-annotations-2.4.0.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -377,7 +377,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/servlet-jar/json.jar/jackson-core-2.4.2.jar!/" />
+          <root url="jar://E:/servlet-jar/jackson.jar/jackson-core-2.4.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -386,7 +386,7 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://E:/servlet-jar/json.jar/jackson-databind-2.4.2.jar!/" />
+          <root url="jar://E:/servlet-jar/jackson.jar/jackson-databind-2.4.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

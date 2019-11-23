@@ -45,8 +45,8 @@
 					<td class="field">是否借出：</td>
 					 <td>
 						 <c:out value="${product.payed}"></c:out>
-						 <%--<c:if test="${product.payed=='1'}">是</c:if>--%>
-						 <%--<c:if test="${product.payed=='0'}">否</c:if>--%>
+						 <%--<c:if test="${product.payed=='是'}">是</c:if>--%>
+						 <%--<c:if test="${product.payed=='否'}">否</c:if>--%>
 					 </td>
 				</tr>
 			</tbody>
