@@ -45,8 +45,6 @@
 					<td width="80"><div class="STYLE1" align="center">作者</div>
 					</td>
 					<td width="100"><div class="STYLE1" align="center">出版社</div>
-					<%--</td>--%>
-					<%--<td width="100"><div class="STYLE1" align="center">是否借出</div>--%>
 					</td>
 					<td width="100"><div class="STYLE1" align="center">图书管理</div>
 					</td>
@@ -63,15 +61,6 @@
 						<c:if test="${product.proId=='1'}">清华出版社</c:if>
 						<c:if test="${product.proId=='2'}">成光出版社</c:if>
                     </td>
-					<%--<td><c:out value="${product.proId}"></c:out></td>--%>
-						<%--<td>--%>
-							<%--<c:if test="${product.productid==null}">否</c:if>--%>
-							<%--<c:if test="${product.productid!=null}">是</c:if>--%>
-							<%--<c:if test="${product.payed=='1'}">是</c:if>--%>
-							<%--<c:if test="${product.payed=='0'}">否</c:if>--%>
-							<%--${product.payed}--%>
-						<%--</td>--%>
-						<%--<td><c:out value="${product.payed}"></c:out></td>--%>
 						<td>
 							<a href="<%=request.getContextPath()%>/selectProductByid.action?id=${product.id}">
 							<input value="修改" class="input-button" onclick="" type="button"></a>
