@@ -71,10 +71,8 @@
 						<c:if test="${user.userType=='1'}">管理员</c:if>
 						<c:if test="${user.userType=='2'}">普通用户</c:if>
 					</td>
-						<%--<td><c:out value="${user.userType}"></c:out></td>--%>
 					<td>
 						<img src="/pic/${user.headpath}" width="30" height="30"/>
-						<%--<a href="#">编辑</a>--%>
 					</td>
 					</tr>
 				</c:forEach>
