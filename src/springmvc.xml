@@ -14,8 +14,8 @@
 
     <mvc:annotation-driven></mvc:annotation-driven>
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/page/"></property>
-        <property name="suffix" value=".jsp"></property>
+        <property name="prefix" value="/page/"></property><!--前缀-->
+        <property name="suffix" value=".jsp"></property><!--后缀-->
     </bean>
 
     <mvc:interceptors>
