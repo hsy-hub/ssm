@@ -48,11 +48,11 @@
     update product_table  set payed="是" where id=#{id}
     </update>
 
-    <delete id="repay" parameterType="product">
-        delete from  borrow_table where id=#{id}
-    </delete>
+    <!--<delete id="repay" parameterType="product">-->
+        <!--delete from  borrow_table where id=#{id}-->
+    <!--</delete>-->
 
-    <update id="repayUpdate" parameterType="product">
-    update product_table  set payed="否" where id=#{id}
-    </update>
+    <!--<update id="repayUpdate" parameterType="product">-->
+    <!--update product_table  set payed="否" where id=#{id}-->
+    <!--</update>-->
 </mapper>

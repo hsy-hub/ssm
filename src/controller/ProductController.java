@@ -29,10 +29,10 @@ public class ProductController {
         //首先是设置第几页，第二个参数是每页的记录数
         PageHelper.startPage(page, 5);
         List<Product> productList = productDao.getProductList(product);
-        PageInfo pageinfo = new PageInfo(productList);
-        model.addAttribute("productName", product.getProductName());
-        model.addAttribute("productUnit", product.getProductUnit());
-        model.addAttribute("pageinfo", pageinfo);
+        PageInfo pageInfo = new PageInfo(productList);
+        model.addAttribute("productName",product.getProductName());
+        model.addAttribute("productUnit",product.getProductUnit());
+        model.addAttribute("pageinfo",pageInfo);
         return "billList";
     }
 
@@ -121,16 +121,16 @@ public class ProductController {
     }
 
 
-    //点击“还书”后
-    @RequestMapping("/repay.action")
-    public String repay(Product pr) throws Exception {
-        Integer userid = (Integer) request.getSession().getAttribute("id");
-        Borrow borrow = new Borrow();
-        borrow.setUserid(userid);
-        borrow.setProductid(pr.getId());
-        productDao.repay(borrow);
-        productDao.repayUpdate(pr);
-        return "redirect:/bill2.action";
-    }
+//    //点击“还书”后
+//    @RequestMapping("/repay.action")
+//    public String repay(Product pr) throws Exception {
+//        Integer userid = (Integer) request.getSession().getAttribute("id");
+//        Borrow borrow = new Borrow();
+//        borrow.setUserid(userid);
+//        borrow.setProductid(pr.getId());
+//        productDao.repay(borrow);
+//        productDao.repayUpdate(pr);
+//        return "redirect:/bill2.action";
+//    }
 
 }

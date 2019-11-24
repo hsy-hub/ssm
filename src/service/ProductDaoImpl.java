@@ -50,15 +50,15 @@ public class ProductDaoImpl implements ProductDao {
         return productMapper.borrowUpdate(product);
     }
 
-    @Override
-    public boolean repay(Borrow borrow) {
-        return productMapper.repay(borrow);
-    }
-
-    @Override
-    public boolean repayUpdate(Product product) throws Exception {
-        return productMapper.repayUpdate(product);
-    }
+//    @Override
+//    public boolean repay(Borrow borrow) {
+//        return productMapper.repay(borrow);
+//    }
+//
+//    @Override
+//    public boolean repayUpdate(Product product) throws Exception {
+//        return productMapper.repayUpdate(product);
+//    }
 }
 
 
