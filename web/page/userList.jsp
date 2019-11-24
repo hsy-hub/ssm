@@ -74,6 +74,15 @@
 					<td>
 						<img src="/pic/${user.headpath}" width="30" height="30"/>
 					</td>
+
+						<%--<td>--%>
+							<%--<c:if test="${user.headpath !=null}">--%>
+								<%--<img src="/pic/${user.headpath}" width=30 height=30/>--%>
+							<%--</c:if>--%>
+							<%--<input type="file"  name="pictureFile"/>--%>
+						<%--</td>--%>
+
+
 					</tr>
 				</c:forEach>
 				</tbody>
